@@ -1,3 +1,8 @@
+
+<div>
+<%= image_tag @link.image.url(:medium) %>
+</div>
+
 <!-- header styling using bootstrap -->
 <div class="page-header">
 	<h1><a href="<%= @link.url %>"><%= @link.title %></a><br> <small>submitted by <%= @link.user.name %></small></h1>
