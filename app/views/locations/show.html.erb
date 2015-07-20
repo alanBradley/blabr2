@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @location.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @location.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @location.longitude %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @location.link %>
+</p>
+
+<h3> Nearby Locations</h3>
+<ul>
+<!-- geocder method used in loop to search through locations and only show nearby locations set to 10 miles radius -->
+<% for location in @location.nearbys(10) %>
+	<!-- shows link to each address and also used distance method to show distance from this address to selected address -->
+	<li><%= link_to location.address, location %> (<%= location.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>

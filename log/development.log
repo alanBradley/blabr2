@@ -12752,3 +12752,1155 @@ Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dd
 
 
 Started GET "/assets/application.self-552a440b482a733cc33336304eacbf19f26f773e410cc8c4a12c935eb4a1f295.js?body=1" for ::1 at 2015-07-19 13:49:25 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (6.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLocations (20150720093752)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address" varchar, "latitude" float, "longitude" float, "link_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_locations_on_link_id" ON "locations" ("link_id")[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150720093752"]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.9ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_link_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_link_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_links_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_links_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_locations_on_link_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_locations_on_link_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_votable_id_and_votable_type_and_vote_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_votable_id_and_votable_type_and_vote_scope' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_voter_id_and_voter_type_and_vote_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_voter_id_and_voter_type_and_vote_scope' AND type='index'
+
+
+
+Started GET "/locations" for ::1 at 2015-07-20 10:42:12 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LocationsController#index as HTML
+  [1m[35mLocation Load (0.3ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered locations/index.html.erb within layouts/application (6.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6572ms (Views: 6518.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/scaffolds.self-07476b2aacdf0d7e521b57dd11085a508d559e3f88033d86e23d7bc7a54ca9ea.css?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/locations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/application.self-ad80796e488745a72c6e6fde52455796e4bc372ab465bc78853885a45e29ac9d.css?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/links.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/locations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/links.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/assets/application.self-552a440b482a733cc33336304eacbf19f26f773e410cc8c4a12c935eb4a1f295.js?body=1" for ::1 at 2015-07-20 10:42:19 +0100
+
+
+Started GET "/locations/new" for ::1 at 2015-07-20 10:42:24 +0100
+Processing by LocationsController#new as HTML
+  Rendered locations/_form.html.erb (120.8ms)
+  Rendered locations/new.html.erb within layouts/application (178.5ms)
+Completed 200 OK in 449ms (Views: 439.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/locations" for ::1 at 2015-07-20 10:42:31 +0100
+Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0N8BZna1ufeejnsn+mcDEr9z7WfO0uxO7IEtBHBpbFSMGaBSKgu11iTThntBFhSkvP+v09UaTJwr/bE6JHt2tA==", "location"=>{"address"=>"dublin, ireland", "latitude"=>"", "longitude"=>"", "link_id"=>""}, "commit"=>"Create Location"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (55.8ms)[0m  [1mINSERT INTO "locations" ("address", "latitude", "longitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["address", "dublin, ireland"], ["latitude", 53.3498053], ["longitude", -6.2603097], ["created_at", "2015-07-20 09:42:31.751607"], ["updated_at", "2015-07-20 09:42:31.751607"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/locations/1
+Completed 302 Found in 584ms (ActiveRecord: 57.7ms)
+
+
+Started GET "/locations/1" for ::1 at 2015-07-20 10:42:31 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered locations/show.html.erb within layouts/application (49.8ms)
+Completed 200 OK in 270ms (Views: 264.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/locations" for ::1 at 2015-07-20 10:42:35 +0100
+Processing by LocationsController#index as HTML
+  [1m[35mLocation Load (0.3ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered locations/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 233ms (Views: 230.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/locations/new" for ::1 at 2015-07-20 10:42:46 +0100
+Processing by LocationsController#new as HTML
+  Rendered locations/_form.html.erb (3.3ms)
+  Rendered locations/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 181ms (Views: 180.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/locations" for ::1 at 2015-07-20 10:42:52 +0100
+Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OPb0pApCyiYAGLrYqAVhlH7lgSHoDvsvpeJm+bNlIH5kMFWQVvzGB7pFR4QTdHYifWnDlfPGW/1invrH53c6ng==", "location"=>{"address"=>"phoenix park, dublin", "latitude"=>"", "longitude"=>"", "link_id"=>""}, "commit"=>"Create Location"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("address", "latitude", "longitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["address", "phoenix park, dublin"], ["latitude", 53.3578178], ["longitude", -6.3344998], ["created_at", "2015-07-20 09:42:52.351908"], ["updated_at", "2015-07-20 09:42:52.351908"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/locations/2
+Completed 302 Found in 98ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/locations/2" for ::1 at 2015-07-20 10:42:52 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mLocation Load (0.4ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered locations/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 180ms (Views: 177.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/locations" for ::1 at 2015-07-20 10:42:54 +0100
+Processing by LocationsController#index as HTML
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  Rendered locations/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 184ms (Views: 182.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/locations/new" for ::1 at 2015-07-20 10:42:57 +0100
+Processing by LocationsController#new as HTML
+  Rendered locations/_form.html.erb (2.8ms)
+  Rendered locations/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 186ms (Views: 184.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/locations" for ::1 at 2015-07-20 10:43:02 +0100
+Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CVlS5Bjuw2+Fa1EMJ1FW1yQkVXW4k2k1uHKnD5UDIglVn/PQRFDPTj82rFCcIEFhJ6gXwaNbyed/DjsxwRE46Q==", "location"=>{"address"=>"blanchardstown, dublin", "latitude"=>"", "longitude"=>"", "link_id"=>""}, "commit"=>"Create Location"}
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "locations" ("address", "latitude", "longitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["address", "blanchardstown, dublin"], ["latitude", 53.3868127], ["longitude", -6.377197100000001], ["created_at", "2015-07-20 09:43:02.646028"], ["updated_at", "2015-07-20 09:43:02.646028"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/locations/3
+Completed 302 Found in 131ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/locations/3" for ::1 at 2015-07-20 10:43:02 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered locations/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 307ms (Views: 305.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/locations" for ::1 at 2015-07-20 10:43:04 +0100
+Processing by LocationsController#index as HTML
+  [1m[35mLocation Load (0.2ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered locations/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 277ms (Views: 275.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/locations/new" for ::1 at 2015-07-20 10:43:07 +0100
+Processing by LocationsController#new as HTML
+  Rendered locations/_form.html.erb (4.8ms)
+  Rendered locations/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 224ms (Views: 223.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/locations" for ::1 at 2015-07-20 10:43:12 +0100
+Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/hF3+WZmX1Nt5vRYlxHGH0L11mPfK96VwQVIoErYnsui19bNOthTcte7CQQsYNGpQXmU18TjfkcGedSeHsqEKw==", "location"=>{"address"=>"finglas,dubln", "latitude"=>"", "longitude"=>"", "link_id"=>""}, "commit"=>"Create Location"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("address", "latitude", "longitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["address", "finglas,dubln"], ["latitude", 53.390325], ["longitude", -6.298400699999999], ["created_at", "2015-07-20 09:43:13.071900"], ["updated_at", "2015-07-20 09:43:13.071900"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/locations/4
+Completed 302 Found in 121ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/locations/4" for ::1 at 2015-07-20 10:43:13 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mLocation Load (0.2ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered locations/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 183ms (Views: 181.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/locations" for ::1 at 2015-07-20 10:43:15 +0100
+Processing by LocationsController#index as HTML
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  Rendered locations/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 174ms (Views: 172.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/locations/new" for ::1 at 2015-07-20 10:43:17 +0100
+Processing by LocationsController#new as HTML
+  Rendered locations/_form.html.erb (2.9ms)
+  Rendered locations/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 171ms (Views: 170.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/locations" for ::1 at 2015-07-20 10:43:28 +0100
+Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hhp1CAh6ZF2YKuncjpdZk3JqLYYW7x05QsUUGkI9sfNC3NQ8VMRofCJ3FIA15k4lceZvMg0nveuFuYgkFi+rEw==", "location"=>{"address"=>"o'connell street, dublin", "latitude"=>"", "longitude"=>"", "link_id"=>""}, "commit"=>"Create Location"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "locations" ("address", "latitude", "longitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["address", "o'connell street, dublin"], ["latitude", 53.3482561], ["longitude", -6.2558793], ["created_at", "2015-07-20 09:43:28.155135"], ["updated_at", "2015-07-20 09:43:28.155135"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/locations/5
+Completed 302 Found in 91ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/locations/5" for ::1 at 2015-07-20 10:43:28 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered locations/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 235ms (Views: 233.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/locations" for ::1 at 2015-07-20 10:43:30 +0100
+Processing by LocationsController#index as HTML
+  [1m[35mLocation Load (0.5ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered locations/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 226ms (Views: 224.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/locations" for ::1 at 2015-07-20 10:51:16 +0100
+Processing by LocationsController#index as HTML
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Bradley/Development/blabr2/app/models/location.rb:6: syntax error, unexpected '>'
+  after_validation :geocode, :if +> :address_changed?
+                                   ^):
+  app/models/location.rb:6: syntax error, unexpected '>'
+  app/controllers/locations_controller.rb:7:in `index'
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (165.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (194.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (375.4ms)
+
+
+Started GET "/locations" for ::1 at 2015-07-20 10:51:29 +0100
+Processing by LocationsController#index as HTML
+  [1m[36mLocation Load (0.7ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  Rendered locations/index.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 435ms (Views: 426.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/locations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/scaffolds.self-07476b2aacdf0d7e521b57dd11085a508d559e3f88033d86e23d7bc7a54ca9ea.css?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/links.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/application.self-ad80796e488745a72c6e6fde52455796e4bc372ab465bc78853885a45e29ac9d.css?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/links.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/application.self-552a440b482a733cc33336304eacbf19f26f773e410cc8c4a12c935eb4a1f295.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/assets/locations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:51:30 +0100
+
+
+Started GET "/locations/1" for ::1 at 2015-07-20 10:51:33 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLocation Load (0.3ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLocation Load (0.4ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.20507351688915 AND 53.49453708311085 AND locations.longitude BETWEEN -6.502770753421106 AND -6.017848646578893 AND locations.id != 1)  ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 204ms (Views: 201.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/locations/1" for ::1 at 2015-07-20 10:52:28 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLocation Load (1.1ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLocation Load (0.4ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.20507351688915 AND 53.49453708311085 AND locations.longitude BETWEEN -6.502770753421106 AND -6.017848646578893 AND locations.id != 1)  ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 304ms (Views: 299.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/locations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/scaffolds.self-07476b2aacdf0d7e521b57dd11085a508d559e3f88033d86e23d7bc7a54ca9ea.css?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/application.self-ad80796e488745a72c6e6fde52455796e4bc372ab465bc78853885a45e29ac9d.css?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/links.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/links.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/locations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/assets/application.self-552a440b482a733cc33336304eacbf19f26f773e410cc8c4a12c935eb4a1f295.js?body=1" for ::1 at 2015-07-20 10:52:29 +0100
+
+
+Started GET "/locations/1" for ::1 at 2015-07-20 10:52:33 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLocation Load (0.2ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLocation Load (0.4ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.20507351688915 AND 53.49453708311085 AND locations.longitude BETWEEN -6.502770753421106 AND -6.017848646578893 AND locations.id != 1)  ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 225ms (Views: 222.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/locations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/scaffolds.self-07476b2aacdf0d7e521b57dd11085a508d559e3f88033d86e23d7bc7a54ca9ea.css?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/links.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/application.self-ad80796e488745a72c6e6fde52455796e4bc372ab465bc78853885a45e29ac9d.css?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/links.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/locations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/assets/application.self-552a440b482a733cc33336304eacbf19f26f773e410cc8c4a12c935eb4a1f295.js?body=1" for ::1 at 2015-07-20 10:52:33 +0100
+
+
+Started GET "/locations/1" for ::1 at 2015-07-20 10:52:52 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLocation Load (0.2ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLocation Load (0.4ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.20507351688915 AND 53.49453708311085 AND locations.longitude BETWEEN -6.502770753421106 AND -6.017848646578893 AND locations.id != 1)  ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 186ms (Views: 183.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/links.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/locations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/scaffolds.self-07476b2aacdf0d7e521b57dd11085a508d559e3f88033d86e23d7bc7a54ca9ea.css?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/application.self-ad80796e488745a72c6e6fde52455796e4bc372ab465bc78853885a45e29ac9d.css?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-20 10:52:52 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-20 10:52:53 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-20 10:52:53 +0100
+
+
+Started GET "/assets/locations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:52:53 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-20 10:52:53 +0100
+
+
+Started GET "/assets/links.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:52:53 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 10:52:53 +0100
+
+
+Started GET "/assets/application.self-552a440b482a733cc33336304eacbf19f26f773e410cc8c4a12c935eb4a1f295.js?body=1" for ::1 at 2015-07-20 10:52:53 +0100
+
+
+Started GET "/locations/5" for ::1 at 2015-07-20 10:53:28 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mLocation Load (0.2ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mLocation Load (0.5ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3482561) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2558793) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3482561 AND locations.longitude >= -6.2558793) THEN  45.0 WHEN (locations.latitude <  53.3482561 AND locations.longitude >= -6.2558793) THEN 135.0 WHEN (locations.latitude <  53.3482561 AND locations.longitude <  -6.2558793) THEN 225.0 WHEN (locations.latitude >= 53.3482561 AND locations.longitude <  -6.2558793) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.20352431688915 AND 53.49298788311085 AND locations.longitude BETWEEN -6.498331542551682 AND -6.013427057448318 AND locations.id != 5)  ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 239ms (Views: 237.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/locations" for ::1 at 2015-07-20 10:53:49 +0100
+Processing by LocationsController#index as HTML
+  [1m[35mLocation Load (0.2ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered locations/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 323ms (Views: 321.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/locations" for ::1 at 2015-07-20 10:58:09 +0100
+
+SyntaxError (/Users/Bradley/Development/blabr2/app/controllers/locations_controller.rb:79: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/locations_controller.rb:79: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (141.4ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (120.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (326.2ms)
+
+
+Started GET "/locations" for ::1 at 2015-07-20 10:58:20 +0100
+Processing by LocationsController#index as HTML
+  Rendered locations/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Bradley/Development/blabr2/app/views/locations/index.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Bradley/Development/blabr2/app/views/locations/index.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/locations/index.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/locations/index.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (145.3ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (140.4ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (319.0ms)
+
+
+Started GET "/locations" for ::1 at 2015-07-20 10:59:28 +0100
+Processing by LocationsController#index as HTML
+  Rendered locations/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Bradley/Development/blabr2/app/views/locations/index.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Bradley/Development/blabr2/app/views/locations/index.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/locations/index.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/locations/index.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (144.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (180.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (358.1ms)
+
+
+Started GET "/locations" for ::1 at 2015-07-20 11:01:31 +0100
+Processing by LocationsController#index as HTML
+  [1m[36mLocation Load (0.8ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  Rendered locations/index.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 424ms (Views: 421.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/links.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 11:01:31 +0100
+
+
+Started GET "/assets/application.self-ad80796e488745a72c6e6fde52455796e4bc372ab465bc78853885a45e29ac9d.css?body=1" for ::1 at 2015-07-20 11:01:31 +0100
+
+
+Started GET "/assets/scaffolds.self-07476b2aacdf0d7e521b57dd11085a508d559e3f88033d86e23d7bc7a54ca9ea.css?body=1" for ::1 at 2015-07-20 11:01:31 +0100
+
+
+Started GET "/assets/locations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 11:01:31 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-20 11:01:31 +0100
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-20 11:01:31 +0100
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-20 11:01:31 +0100
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-20 11:01:31 +0100
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-20 11:01:31 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-20 11:01:31 +0100
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-20 11:01:31 +0100
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-20 11:01:31 +0100
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-20 11:01:32 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-20 11:01:32 +0100
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-20 11:01:32 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-20 11:01:32 +0100
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-20 11:01:32 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-20 11:01:32 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-20 11:01:32 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 11:01:32 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-20 11:01:32 +0100
+
+
+Started GET "/assets/locations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 11:01:32 +0100
+
+
+Started GET "/assets/links.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 11:01:32 +0100
+
+
+Started GET "/assets/application.self-552a440b482a733cc33336304eacbf19f26f773e410cc8c4a12c935eb4a1f295.js?body=1" for ::1 at 2015-07-20 11:01:32 +0100
+
+
+Started GET "/locations?utf8=%E2%9C%93&search=dublin" for ::1 at 2015-07-20 11:01:39 +0100
+Processing by LocationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"dublin"}
+  [1m[35mLocation Load (0.2ms)[0m  SELECT locations.*, NULL AS distance, NULL AS bearing FROM "locations" WHERE (0)
+  Rendered locations/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 30270ms (Views: 190.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/locations?utf8=%E2%9C%93&search=dublin" for ::1 at 2015-07-20 11:02:10 +0100
+Processing by LocationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"dublin"}
+  [1m[36mLocation Load (1.3ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC[0m
+SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC
+  Rendered locations/index.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 1359ms (ActiveRecord: 1.3ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC):
+    21:   </thead>
+    22: 
+    23:   <tbody>
+    24:     <% @locations.each do |location| %>
+    25:       <tr>
+    26:         <td><%= location.address %></td>
+    27:         <td><%= location.latitude %></td>
+  app/views/locations/index.html.erb:24:in `_app_views_locations_index_html_erb__2056760123982291517_70229563611460'
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.3ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (181.1ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (141.9ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (428.5ms)
+
+
+Started GET "/locations/new" for ::1 at 2015-07-20 11:02:12 +0100
+Processing by LocationsController#new as HTML
+  Rendered locations/_form.html.erb (33.4ms)
+  Rendered locations/new.html.erb within layouts/application (111.0ms)
+Completed 200 OK in 543ms (Views: 541.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/locations?utf8=%E2%9C%93&search=dublin" for ::1 at 2015-07-20 11:03:17 +0100
+Processing by LocationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"dublin"}
+  [1m[35mLocation Load (1.1ms)[0m  SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC
+SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC
+  Rendered locations/index.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC):
+    21:   </thead>
+    22: 
+    23:   <tbody>
+    24:     <% @locations.each do |location| %>
+    25:       <tr>
+    26:         <td><%= locations.address %></td>
+    27:         <td><%= locations.latitude %></td>
+  app/views/locations/index.html.erb:24:in `_app_views_locations_index_html_erb__2056760123982291517_70229558631640'
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (162.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (126.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (352.5ms)
+
+
+Started GET "/locations?utf8=%E2%9C%93&search=dublin" for ::1 at 2015-07-20 11:03:22 +0100
+Processing by LocationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"dublin"}
+  [1m[36mLocation Load (1.7ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC[0m
+SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC
+  Rendered locations/index.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 1.7ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC):
+    21:   </thead>
+    22: 
+    23:   <tbody>
+    24:     <% @locations.each do |location| %>
+    25:       <tr>
+    26:         <td><%= locations.address %></td>
+    27:         <td><%= locations.latitude %></td>
+  app/views/locations/index.html.erb:24:in `_app_views_locations_index_html_erb__2056760123982291517_70229558631640'
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (153.4ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (206.0ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (364.7ms)
+
+
+Started GET "/locations?utf8=%E2%9C%93&search=dublin" for ::1 at 2015-07-20 11:03:38 +0100
+Processing by LocationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"dublin"}
+  [1m[35mLocation Load (1.3ms)[0m  SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC
+SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC
+  Rendered locations/index.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 1.3ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC):
+    21:   </thead>
+    22: 
+    23:   <tbody>
+    24:     <% @locations.each do |locations| %>
+    25:       <tr>
+    26:         <td><%= locations.address %></td>
+    27:         <td><%= locations.latitude %></td>
+  app/views/locations/index.html.erb:24:in `_app_views_locations_index_html_erb__2056760123982291517_70229565705520'
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.2ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (146.0ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (122.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (277.3ms)
+
+
+Started GET "/locations?utf8=%E2%9C%93&search=dublin%2C+ireland" for ::1 at 2015-07-20 11:04:56 +0100
+Processing by LocationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"dublin, ireland"}
+  [1m[36mLocation Load (2.8ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC[0m
+SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC
+  Rendered locations/index.html.erb within layouts/application (36.8ms)
+Completed 500 Internal Server Error in 573ms (ActiveRecord: 2.8ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC):
+    21:   </thead>
+    22: 
+    23:   <tbody>
+    24:     <% @locations.each do |location| %>
+    25:       <tr>
+    26:         <td><%= location.address %></td>
+    27:         <td><%= location.latitude %></td>
+  app/views/locations/index.html.erb:24:in `_app_views_locations_index_html_erb__2056760123982291517_70229549238960'
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (152.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (122.9ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (273.6ms)
+
+
+Started GET "/locations?utf8=%E2%9C%93&search=dublin%2C+ireland" for ::1 at 2015-07-20 11:05:38 +0100
+Processing by LocationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"dublin, ireland"}
+  [1m[35mLocation Load (1.1ms)[0m  SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC
+SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC
+  Rendered locations/index.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 498ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC):
+    21:   </thead>
+    22: 
+    23:   <tbody>
+    24:     <% @locations.each do |location| %>
+    25:       <tr>
+    26:         <td><%= location.address %></td>
+    27:         <td><%= location.latitude %></td>
+  app/views/locations/index.html.erb:24:in `_app_views_locations_index_html_erb__2056760123982291517_70229557978320'
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.3ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (153.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (131.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (348.0ms)
+
+
+Started GET "/locations?utf8=%E2%9C%93&search=dublin%2C+ireland" for ::1 at 2015-07-20 11:05:45 +0100
+Processing by LocationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"dublin, ireland"}
+  [1m[36mLocation Load (1.5ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC[0m
+SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC
+  Rendered locations/index.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: locations.distance: SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY "locations"."distance" ASC):
+    21:   </thead>
+    22: 
+    23:   <tbody>
+    24:     <% @locations.each do |location| %>
+    25:       <tr>
+    26:         <td><%= location.address %></td>
+    27:         <td><%= location.latitude %></td>
+  app/views/locations/index.html.erb:24:in `_app_views_locations_index_html_erb__2056760123982291517_70229557978320'
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.4ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.1ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (159.1ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (133.0ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (298.4ms)
+
+
+Started POST "/console/repl_sessions/f89c4118d681223ca8fda8fdf8e22496/trace" for ::1 at 2015-07-20 11:05:59 +0100
+  [1m[36mLocation Load (4.4ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  [1m[35mLocation Load (0.7ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY "locations"."id" ASC LIMIT 1[0m
+
+
+Started GET "/locations?utf8=%E2%9C%93&search=dublin%2C+ireland" for ::1 at 2015-07-20 11:09:27 +0100
+Processing by LocationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"dublin, ireland"}
+  [1m[35mLocation Load (0.4ms)[0m  SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY distance ASC
+  Rendered locations/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 306ms (Views: 227.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/locations/new" for ::1 at 2015-07-20 11:09:51 +0100
+Processing by LocationsController#new as HTML
+  Rendered locations/_form.html.erb (3.6ms)
+  Rendered locations/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 218ms (Views: 217.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/locations" for ::1 at 2015-07-20 11:09:58 +0100
+Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8+gwuzdhGrDtC3mmMh4BbSnZTAUIVz/wX+w6c3h9eKmvLpGPa98WkVdWhPqJbxbbKlUOsROfnyKYkKZNLG9iSQ==", "location"=>{"address"=>"Belfast", "latitude"=>"", "longitude"=>"", "link_id"=>""}, "commit"=>"Create Location"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "locations" ("address", "latitude", "longitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["address", "Belfast"], ["latitude", 54.59728500000001], ["longitude", -5.93012], ["created_at", "2015-07-20 10:09:59.154048"], ["updated_at", "2015-07-20 10:09:59.154048"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/locations/6
+Completed 302 Found in 487ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/locations/6" for ::1 at 2015-07-20 11:09:59 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mLocation Load (0.3ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mLocation Load (0.6ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 54.59728500000001) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -5.93012) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 54.59728500000001 AND locations.longitude >= -5.93012) THEN  45.0 WHEN (locations.latitude <  54.59728500000001 AND locations.longitude >= -5.93012) THEN 135.0 WHEN (locations.latitude <  54.59728500000001 AND locations.longitude <  -5.93012) THEN 225.0 WHEN (locations.latitude >= 54.59728500000001 AND locations.longitude <  -5.93012) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 54.45255321688916 AND 54.742016783110856 AND locations.longitude BETWEEN -6.179950549273791 AND -5.6802894507262085 AND locations.id != 6)  ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 264ms (Views: 260.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/locations" for ::1 at 2015-07-20 11:10:01 +0100
+Processing by LocationsController#index as HTML
+  [1m[35mLocation Load (0.3ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered locations/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 203ms (Views: 202.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/locations?utf8=%E2%9C%93&search=belfast" for ::1 at 2015-07-20 11:10:06 +0100
+Processing by LocationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"belfast"}
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 54.59728500000001) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -5.93012) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 54.59728500000001 AND locations.longitude >= -5.93012) THEN  45.0 WHEN (locations.latitude <  54.59728500000001 AND locations.longitude >= -5.93012) THEN 135.0 WHEN (locations.latitude <  54.59728500000001 AND locations.longitude <  -5.93012) THEN 225.0 WHEN (locations.latitude >= 54.59728500000001 AND locations.longitude <  -5.93012) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.87362608444577 AND 55.320943915554246 AND locations.longitude BETWEEN -7.179272746368956 AND -4.680967253631043)  ORDER BY distance ASC[0m
+  Rendered locations/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 320ms (Views: 216.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/locations?utf8=%E2%9C%93&search=dublin" for ::1 at 2015-07-20 11:10:12 +0100
+Processing by LocationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"dublin"}
+  [1m[35mLocation Load (0.5ms)[0m  SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3498053) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2603097) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3498053 AND locations.longitude >= -6.2603097) THEN  45.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude >= -6.2603097) THEN 135.0 WHEN (locations.latitude <  53.3498053 AND locations.longitude <  -6.2603097) THEN 225.0 WHEN (locations.latitude >= 53.3498053 AND locations.longitude <  -6.2603097) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 52.62614638444576 AND 54.07346421555424 AND locations.longitude BETWEEN -7.472614967105531 AND -5.048004432894468)  ORDER BY distance ASC
+  Rendered locations/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 303ms (Views: 217.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/locations?utf8=%E2%9C%93&search=" for ::1 at 2015-07-20 11:10:16 +0100
+Processing by LocationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+  [1m[36mLocation Load (0.6ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  Rendered locations/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 234ms (Views: 226.7ms | ActiveRecord: 0.6ms)
