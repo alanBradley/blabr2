@@ -13904,3 +13904,770 @@ Processing by LocationsController#index as HTML
   [1m[36mLocation Load (0.6ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
   Rendered locations/index.html.erb within layouts/application (9.5ms)
 Completed 200 OK in 234ms (Views: 226.7ms | ActiveRecord: 0.6ms)
+  [1m[36mUser Load (4.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY "locations"."id" DESC LIMIT 1[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT  "links".* FROM "links"  ORDER BY "links"."id" DESC LIMIT 1
+  [1m[36mLink Load (0.4ms)[0m  [1mSELECT  "links".* FROM "links"  ORDER BY "links"."id" DESC LIMIT 1[0m
+  [1m[35mLocation Load (51.2ms)[0m  SELECT  "locations".* FROM "locations"  ORDER BY "locations"."id" DESC LIMIT 1
+
+
+Started GET "/links/new" for ::1 at 2015-07-20 16:23:11 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LinksController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered links/_form.html.erb (169.7ms)
+  Rendered links/new.html.erb within layouts/application (186.6ms)
+Completed 500 Internal Server Error in 395ms (ActiveRecord: 2.0ms)
+
+ActionView::Template::Error (undefined method `link_to_add_association' for #<#<Class:0x007fb09ca41218>:0x007fb09ca402f0>):
+    27:     <%= builder.label :address, "Address" %><br>
+    28:     <%= builder.text_field :address, class: "form-control" %>
+    29:     <% end %>
+    30:     <%= link_to_add_association 'Add address', f, :locations, class: "btn btn-default add-button" %>
+    31:   </div> 
+    32: 
+    33:     <div class="form-group">
+  app/views/links/_form.html.erb:30:in `block in _app_views_links__form_html_erb___299415192410574209_70198243879400'
+  app/views/links/_form.html.erb:1:in `_app_views_links__form_html_erb___299415192410574209_70198243879400'
+  app/views/links/new.html.erb:3:in `_app_views_links_new_html_erb__3877676121712155873_70198259386100'
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.3ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.2ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (152.9ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (146.0ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (316.8ms)
+
+
+Started GET "/" for ::1 at 2015-07-20 16:23:31 +0100
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.5ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 4], ["votable_type", "Link"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 4], ["votable_type", "Link"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 5], ["votable_type", "Link"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 5], ["votable_type", "Link"]]
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  Rendered links/index.html.erb within layouts/application (64.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 3062ms (Views: 3057.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-20 16:32:03 +0100
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 4], ["votable_type", "Link"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 4], ["votable_type", "Link"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 5], ["votable_type", "Link"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 5], ["votable_type", "Link"]]
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  Rendered links/index.html.erb within layouts/application (39.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 349ms (Views: 345.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/links/new" for ::1 at 2015-07-20 16:32:06 +0100
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered links/_form.html.erb (8.1ms)
+  Rendered links/new.html.erb within layouts/application (12.3ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (wrong number of arguments (4 for 0..3)):
+    27:     <%= builder.label :address, "Address" %><br>
+    28:     <%= builder.text_field :address, class: "form-control" %>
+    29:     <% end %>
+    30:     <%= link_to 'Add address', f, :locations, class: "btn btn-default add-button" %>
+    31:   </div> 
+    32: 
+    33:     <div class="form-group">
+  app/views/links/_form.html.erb:30:in `block in _app_views_links__form_html_erb___299415192410574209_70198282796380'
+  app/views/links/_form.html.erb:1:in `_app_views_links__form_html_erb___299415192410574209_70198282796380'
+  app/views/links/new.html.erb:3:in `_app_views_links_new_html_erb__3877676121712155873_70198282810000'
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (167.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (136.3ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (290.8ms)
+
+
+Started GET "/links/new" for ::1 at 2015-07-20 16:32:07 +0100
+Processing by LinksController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered links/_form.html.erb (7.7ms)
+  Rendered links/new.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (wrong number of arguments (4 for 0..3)):
+    27:     <%= builder.label :address, "Address" %><br>
+    28:     <%= builder.text_field :address, class: "form-control" %>
+    29:     <% end %>
+    30:     <%= link_to 'Add address', f, :locations, class: "btn btn-default add-button" %>
+    31:   </div> 
+    32: 
+    33:     <div class="form-group">
+  app/views/links/_form.html.erb:30:in `block in _app_views_links__form_html_erb___299415192410574209_70198259401380'
+  app/views/links/_form.html.erb:1:in `_app_views_links__form_html_erb___299415192410574209_70198259401380'
+  app/views/links/new.html.erb:3:in `_app_views_links_new_html_erb__3877676121712155873_70198259386100'
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.1ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (162.0ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (166.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (319.1ms)
+
+
+Started GET "/links/new" for ::1 at 2015-07-20 16:32:36 +0100
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered links/_form.html.erb (26.2ms)
+  Rendered links/new.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 224ms (Views: 220.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/links/new" for ::1 at 2015-07-20 16:33:21 +0100
+Processing by LinksController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 2.0ms)
+
+NoMethodError (undefined method `address' for #<ActiveRecord::Associations::CollectionProxy []>):
+  app/controllers/links_controller.rb:26:in `new'
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (143.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (171.1ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (328.5ms)
+
+
+Started GET "/links/new" for ::1 at 2015-07-20 16:34:05 +0100
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 1.7ms)
+
+NoMethodError (undefined method `locations' for #<User:0x007fb0a08d3198>):
+  app/controllers/links_controller.rb:26:in `new'
+
+
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (139.6ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (116.1ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Bradley/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (266.5ms)
+
+
+Started GET "/" for ::1 at 2015-07-20 16:34:31 +0100
+Processing by LinksController#index as HTML
+  [1m[35mLink Load (0.7ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 4], ["votable_type", "Link"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 4], ["votable_type", "Link"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 5], ["votable_type", "Link"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 5], ["votable_type", "Link"]]
+  [1m[35mLocation Load (0.3ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered links/index.html.erb within layouts/application (69.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 303ms (Views: 278.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/links.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/locations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/scaffolds.self-07476b2aacdf0d7e521b57dd11085a508d559e3f88033d86e23d7bc7a54ca9ea.css?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/application.self-ad80796e488745a72c6e6fde52455796e4bc372ab465bc78853885a45e29ac9d.css?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/links.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/locations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/application.self-552a440b482a733cc33336304eacbf19f26f773e410cc8c4a12c935eb4a1f295.js?body=1" for ::1 at 2015-07-20 16:34:32 +0100
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2015-07-20 16:34:33 +0100
+
+
+Started GET "/links/new" for ::1 at 2015-07-20 16:34:34 +0100
+Processing by LinksController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered links/_form.html.erb (4.1ms)
+  Rendered links/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 230ms (Views: 221.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/links" for ::1 at 2015-07-20 16:35:11 +0100
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ucHZaerhsn+HGifK8nkeIqaiBX0uftRsiBZSI2OipkPlB3hdtl++Xj1H2pZJCAmUpS5HyTW2dL5Pas4dN7C8ow==", "link"=>{"title"=>"Latest link cabra road", "url"=>"http://www.instagram.com", "locations_attributes"=>{"0"=>{"address"=>"Cabra road, Dublin"}}, "image"=>#<ActionDispatch::Http::UploadedFile:0x007fb09f48ed18 @tempfile=#<Tempfile:/var/folders/v2/j7_x7_954jz62c1jy8kzfgp80000gn/T/RackMultipart20150720-4486-15mj456.JPG>, @original_filename="IMG_0967.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"link[image]\"; filename=\"IMG_0967.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Command :: file -b --mime '/var/folders/v2/j7_x7_954jz62c1jy8kzfgp80000gn/T/5418620748e0378016a0f804fbd8ceb820150720-4486-15rj6lt.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/v2/j7_x7_954jz62c1jy8kzfgp80000gn/T/5418620748e0378016a0f804fbd8ceb820150720-4486-tnglnk.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/v2/j7_x7_954jz62c1jy8kzfgp80000gn/T/5418620748e0378016a0f804fbd8ceb820150720-4486-tnglnk.JPG[0]'
+Command :: convert '/var/folders/v2/j7_x7_954jz62c1jy8kzfgp80000gn/T/5418620748e0378016a0f804fbd8ceb820150720-4486-tnglnk.JPG[0]' -auto-orient -resize "x400" -crop "400x400+66+0" +repage '/var/folders/v2/j7_x7_954jz62c1jy8kzfgp80000gn/T/ee4425c290607a461ebb9d6c011ef02420150720-4486-1cdi4f2'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/v2/j7_x7_954jz62c1jy8kzfgp80000gn/T/5418620748e0378016a0f804fbd8ceb820150720-4486-tnglnk.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/v2/j7_x7_954jz62c1jy8kzfgp80000gn/T/5418620748e0378016a0f804fbd8ceb820150720-4486-tnglnk.JPG[0]'
+Command :: convert '/var/folders/v2/j7_x7_954jz62c1jy8kzfgp80000gn/T/5418620748e0378016a0f804fbd8ceb820150720-4486-tnglnk.JPG[0]' -auto-orient -resize "400x400>" '/var/folders/v2/j7_x7_954jz62c1jy8kzfgp80000gn/T/ee4425c290607a461ebb9d6c011ef02420150720-4486-1riefu2'
+  [1m[35m (0.2ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/v2/j7_x7_954jz62c1jy8kzfgp80000gn/T/5418620748e0378016a0f804fbd8ceb820150720-4486-18pa7gj.JPG'
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "links" ("title", "url", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Latest link cabra road"], ["url", "http://www.instagram.com"], ["image_file_name", "IMG_0967.JPG"], ["image_content_type", "image/jpeg"], ["image_file_size", 2698066], ["image_updated_at", "2015-07-20 15:35:11.738790"], ["user_id", 1], ["created_at", "2015-07-20 15:35:15.264317"], ["updated_at", "2015-07-20 15:35:15.264317"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "locations" ("address", "latitude", "longitude", "link_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["address", "Cabra road, Dublin"], ["latitude", 53.3612189], ["longitude", -6.2874577], ["link_id", 6], ["created_at", "2015-07-20 15:35:15.269215"], ["updated_at", "2015-07-20 15:35:15.269215"]]
+  [1m[36m (22.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/links/6
+Completed 302 Found in 3667ms (ActiveRecord: 24.0ms)
+
+
+Started GET "/links/6" for ::1 at 2015-07-20 16:35:15 +0100
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mLink Load (0.3ms)[0m  SELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Link"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Link"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."link_id" = ?[0m  [["link_id", 6]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = ?  [["link_id", 6]]
+  Rendered collection (0.0ms)
+  Rendered links/show.html.erb within layouts/application (203.3ms)
+Completed 200 OK in 583ms (Views: 578.5ms | ActiveRecord: 1.9ms)
+  [1m[36mLocation Load (0.6ms)[0m  [1mSELECT  "locations".* FROM "locations"  ORDER BY "locations"."id" DESC LIMIT 1[0m
+
+
+Started GET "/" for ::1 at 2015-07-20 16:35:53 +0100
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.4ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 4], ["votable_type", "Link"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 4], ["votable_type", "Link"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 5], ["votable_type", "Link"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 5], ["votable_type", "Link"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Link"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Link"]]
+  [1m[35mLocation Load (0.2ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered links/index.html.erb within layouts/application (34.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 300ms (Views: 296.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/locations/8" for ::1 at 2015-07-20 16:35:55 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mLocation Load (0.3ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mLocation Load (0.5ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3612189) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2874577) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3612189 AND locations.longitude >= -6.2874577) THEN  45.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude >= -6.2874577) THEN 135.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude <  -6.2874577) THEN 225.0 WHEN (locations.latitude >= 53.3612189 AND locations.longitude <  -6.2874577) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.21648711688915 AND 53.50595068311085 AND locations.longitude BETWEEN -6.529983691966722 AND -6.044931708033278 AND locations.id != 8)  ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (5.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 246ms (Views: 242.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/locations/8" for ::1 at 2015-07-20 16:38:04 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mLink Load (0.2ms)[0m  SELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mLocation Load (2.9ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3612189) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2874577) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3612189 AND locations.longitude >= -6.2874577) THEN  45.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude >= -6.2874577) THEN 135.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude <  -6.2874577) THEN 225.0 WHEN (locations.latitude >= 53.3612189 AND locations.longitude <  -6.2874577) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.21648711688915 AND 53.50595068311085 AND locations.longitude BETWEEN -6.529983691966722 AND -6.044931708033278 AND locations.id != 8)  ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (40.8ms)
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 416ms (Views: 375.6ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/assets/locations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 16:38:04 +0100
+
+
+Started GET "/assets/scaffolds.self-07476b2aacdf0d7e521b57dd11085a508d559e3f88033d86e23d7bc7a54ca9ea.css?body=1" for ::1 at 2015-07-20 16:38:04 +0100
+
+
+Started GET "/assets/links.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 16:38:04 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-20 16:38:04 +0100
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-20 16:38:04 +0100
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/application.self-ad80796e488745a72c6e6fde52455796e4bc372ab465bc78853885a45e29ac9d.css?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/links.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/locations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/assets/application.self-552a440b482a733cc33336304eacbf19f26f773e410cc8c4a12c935eb4a1f295.js?body=1" for ::1 at 2015-07-20 16:38:05 +0100
+
+
+Started GET "/locations/8" for ::1 at 2015-07-20 16:38:23 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mLink Load (0.2ms)[0m  SELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mLocation Load (0.4ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3612189) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2874577) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3612189 AND locations.longitude >= -6.2874577) THEN  45.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude >= -6.2874577) THEN 135.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude <  -6.2874577) THEN 225.0 WHEN (locations.latitude >= 53.3612189 AND locations.longitude <  -6.2874577) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.21648711688915 AND 53.50595068311085 AND locations.longitude BETWEEN -6.529983691966722 AND -6.044931708033278 AND locations.id != 8)  ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (8.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 217ms (Views: 214.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/links.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/locations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/scaffolds.self-07476b2aacdf0d7e521b57dd11085a508d559e3f88033d86e23d7bc7a54ca9ea.css?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/application.self-ad80796e488745a72c6e6fde52455796e4bc372ab465bc78853885a45e29ac9d.css?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/links.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/application.self-552a440b482a733cc33336304eacbf19f26f773e410cc8c4a12c935eb4a1f295.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/assets/locations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:38:24 +0100
+
+
+Started GET "/locations/8" for ::1 at 2015-07-20 16:38:26 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mLink Load (0.2ms)[0m  SELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mLocation Load (0.4ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3612189) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2874577) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3612189 AND locations.longitude >= -6.2874577) THEN  45.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude >= -6.2874577) THEN 135.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude <  -6.2874577) THEN 225.0 WHEN (locations.latitude >= 53.3612189 AND locations.longitude <  -6.2874577) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.21648711688915 AND 53.50595068311085 AND locations.longitude BETWEEN -6.529983691966722 AND -6.044931708033278 AND locations.id != 8)  ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (5.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 211ms (Views: 209.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/locations/8" for ::1 at 2015-07-20 16:38:51 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mLink Load (0.2ms)[0m  SELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mLocation Load (0.4ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3612189) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2874577) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3612189 AND locations.longitude >= -6.2874577) THEN  45.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude >= -6.2874577) THEN 135.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude <  -6.2874577) THEN 225.0 WHEN (locations.latitude >= 53.3612189 AND locations.longitude <  -6.2874577) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.21648711688915 AND 53.50595068311085 AND locations.longitude BETWEEN -6.529983691966722 AND -6.044931708033278 AND locations.id != 8)  ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (18.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 292ms (Views: 289.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/locations/8" for ::1 at 2015-07-20 16:40:35 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mLocation Load (0.4ms)[0m  SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3612189) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2874577) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3612189 AND locations.longitude >= -6.2874577) THEN  45.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude >= -6.2874577) THEN 135.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude <  -6.2874577) THEN 225.0 WHEN (locations.latitude >= 53.3612189 AND locations.longitude <  -6.2874577) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.21648711688915 AND 53.50595068311085 AND locations.longitude BETWEEN -6.529983691966722 AND -6.044931708033278 AND locations.id != 8)  ORDER BY distance ASC
+  Rendered locations/show.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 255ms (Views: 252.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/links.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/locations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/application.self-ad80796e488745a72c6e6fde52455796e4bc372ab465bc78853885a45e29ac9d.css?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/scaffolds.self-07476b2aacdf0d7e521b57dd11085a508d559e3f88033d86e23d7bc7a54ca9ea.css?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/links.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/locations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/assets/application.self-552a440b482a733cc33336304eacbf19f26f773e410cc8c4a12c935eb4a1f295.js?body=1" for ::1 at 2015-07-20 16:40:36 +0100
+
+
+Started GET "/locations/8" for ::1 at 2015-07-20 16:40:38 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mLocation Load (0.2ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mLocation Load (0.4ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3612189) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2874577) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3612189 AND locations.longitude >= -6.2874577) THEN  45.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude >= -6.2874577) THEN 135.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude <  -6.2874577) THEN 225.0 WHEN (locations.latitude >= 53.3612189 AND locations.longitude <  -6.2874577) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.21648711688915 AND 53.50595068311085 AND locations.longitude BETWEEN -6.529983691966722 AND -6.044931708033278 AND locations.id != 8)  ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (5.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 296ms (Views: 293.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/locations/8" for ::1 at 2015-07-20 16:41:04 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mLink Load (0.2ms)[0m  SELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mLocation Load (0.8ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3612189) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2874577) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3612189 AND locations.longitude >= -6.2874577) THEN  45.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude >= -6.2874577) THEN 135.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude <  -6.2874577) THEN 225.0 WHEN (locations.latitude >= 53.3612189 AND locations.longitude <  -6.2874577) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.21648711688915 AND 53.50595068311085 AND locations.longitude BETWEEN -6.529983691966722 AND -6.044931708033278 AND locations.id != 8)  ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (7.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 240ms (Views: 236.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/scaffolds.self-07476b2aacdf0d7e521b57dd11085a508d559e3f88033d86e23d7bc7a54ca9ea.css?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/locations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/application.self-ad80796e488745a72c6e6fde52455796e4bc372ab465bc78853885a45e29ac9d.css?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/links.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/links.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/locations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/assets/application.self-552a440b482a733cc33336304eacbf19f26f773e410cc8c4a12c935eb4a1f295.js?body=1" for ::1 at 2015-07-20 16:41:05 +0100
+
+
+Started GET "/" for ::1 at 2015-07-20 16:41:14 +0100
+Processing by LinksController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 3], ["votable_type", "Link"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 3], ["votable_type", "Link"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 4], ["votable_type", "Link"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 4], ["votable_type", "Link"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 5], ["votable_type", "Link"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL  [["votable_id", 5], ["votable_type", "Link"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 6], ["votable_type", "Link"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 'f' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 6], ["votable_type", "Link"]]
+  [1m[35mLocation Load (0.2ms)[0m  SELECT "locations".* FROM "locations"
+  Rendered links/index.html.erb within layouts/application (36.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 241ms (Views: 236.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2015-07-20 16:41:15 +0100
+
+
+Started GET "/locations/8" for ::1 at 2015-07-20 16:41:26 +0100
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mLocation Load (0.2ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mLocation Load (0.4ms)[0m  SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 53.3612189) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -6.2874577) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 53.3612189 AND locations.longitude >= -6.2874577) THEN  45.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude >= -6.2874577) THEN 135.0 WHEN (locations.latitude <  53.3612189 AND locations.longitude <  -6.2874577) THEN 225.0 WHEN (locations.latitude >= 53.3612189 AND locations.longitude <  -6.2874577) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 53.21648711688915 AND 53.50595068311085 AND locations.longitude BETWEEN -6.529983691966722 AND -6.044931708033278 AND locations.id != 8)  ORDER BY distance ASC
+  Rendered locations/show.html.erb within layouts/application (6.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 226ms (Views: 223.6ms | ActiveRecord: 0.9ms)

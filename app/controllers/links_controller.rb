@@ -8,6 +8,8 @@ class LinksController < ApplicationController
   def index
     # pulls all links vailable from the database
     @links = Link.all
+    # pulls all the locaton data from the databse to use in the links index page
+    @locations = Location.all
   end
 
   # GET /links/1
@@ -20,6 +22,8 @@ class LinksController < ApplicationController
     # builds out a link from the current user instead of just a new link
     # @link = Link.new
     @link = current_user.links.build
+    # builds an address form-field location for the locations model
+    @link.locations.build
   end
 
   # GET /links/1/edit
@@ -92,7 +96,8 @@ class LinksController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # added locations_attributes in link_params to add address from links form to the locations model
     def link_params
-      params.require(:link).permit(:title, :url, :image)
+      params.require(:link).permit(:title, :url, :image, locations_attributes: [:address, :_destroy])
     end
 end
