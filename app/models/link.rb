@@ -4,6 +4,7 @@ class Link < ActiveRecord::Base
 	has_many :comments
 
 	has_attached_file :image, styles: { medium: "400x400#", thumb: "400x400>" }
+	# image regex here for validation on content_type
   	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   	# if the link is destroyed than the location dependent upon it is deleted

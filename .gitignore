@@ -15,4 +15,4 @@
 /log/*
 !/log/.keep
 /tmp
-/public/systems/links/images
+/public/system/links/images

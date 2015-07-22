@@ -7,9 +7,10 @@ class LinksController < ApplicationController
   # GET /links.json
   def index
     # pulls all links vailable from the database
-    @links = Link.all
+    @links = Link.all.order("links.updated_at DESC")
     # pulls all the locaton data from the databse to use in the links index page
     @locations = Location.all
+    @users = current_user
   end
 
   # GET /links/1
