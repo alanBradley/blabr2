@@ -2,20 +2,13 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div id="content" class="col-md-4 center-block">
+    <div id="content" class="col-md-8 center-block">
 
       <p>
-        <strong>Firstname:</strong>
-        <%= @profile.firstname %>
+        <strong>Name: </strong>
+        <%= @profile.firstname + " " + @profile.lastname %> 
       </p>
-
       <p>
-        <strong>Lastname:</strong>
-        <%= @profile.lastname %>
-      </p>
-
-      <p>
-        <strong>Avatar:</strong>
         <%= image_tag @profile.avatar.url(:thumb) %>
       </p>
 
@@ -38,19 +31,23 @@
         <strong>Email:</strong>
         <%= @profile.user.email %>
       </p>
-
-      <%= link_to 'Edit', edit_profile_path(@profile) %> |
-      <%= link_to 'Back', profiles_path %>
+      <div class="btn-group">
+        <%= link_to 'Edit Profile', edit_profile_path(@profile), class: "btn btn-default" %>
+      </div>
     </div>
-  </div>
-</div>
+
 
 
     <div id="content" class="col-md-4 right-block">
-      <h4> My blabs </h4>
-      <% @links.each do |link| %>
-        <!-- <div class="link row clearfix"> -->
-      <%= link_to link.title, link %><br>
+        <h4> My latest blabs </h4>
+        <% @links.each do |link| %>
+          <!-- <div class="link row clearfix"> -->
+        <%= image_tag link.image.url(:thumb) %><br>
+        <div class="btn-group">
+          <strong><%= link_to link.title, link, class: "btn btn-default" %></strong><br><br>
+        </div>
 
       <%end %>
     </div>
+  </div>
+</div>

@@ -18,6 +18,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><%= link_to 'Submit link', new_link_path %></li>
 					<li><%= link_to 'Account', edit_user_registration_path %></li>
+					<li><%= link_to 'Edit Profile', edit_user_registration_path  %></li>
 					<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
 				</ul>
 			<% else %>
@@ -43,5 +44,23 @@
 		</div>
 	</div>
 </div>
+
+
+<!-- footer development using bootstrap -->
+<footer class="footer">
+	<div class="panel-footer">
+		<div class="wrap">
+		  <small>
+		    Brought to you by <a href="http://www.taxitoursireland.ie/">Taxitoursireland.</a>
+			Developed with love by <a href="http://www.iambradley.me/">Bradley.</a>
+		  </small>
+		  <li class="nav navbar-nav navbar-right">
+		     <%= link_to "About",   root_path %> |
+		     <%= link_to "Contact", root_path %> | 
+		     <a href="http://www.taxitoursireland.ie/">News &nbsp;</a>  
+		  </li>
+		</div>
+	</div>
+</footer>
 </body>
 </html>

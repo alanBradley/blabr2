@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150721235829) do
+ActiveRecord::Schema.define(version: 20150725163913) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "link_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150721235829) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.text     "blab"
   end
 
   add_index "links", ["user_id"], name: "index_links_on_user_id"

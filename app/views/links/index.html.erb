@@ -7,7 +7,7 @@
           <%= image_tag link.image.url(:thumb) %>
           <h2>
             <%= link_to link.title, link %><br>
-            <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> by <%= link.user.name %></small>
+            <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> ago by <%= link.user.name %></small>
           </h2>
         
           <div class="btn-group">
@@ -29,10 +29,11 @@
 
     <!-- right hand column of index page set to medium device width 4 bootstrap grid -->
     <div id="content" class="col-md-4 center-block">
-      <h4> Other Blab Locations </h4>
+      <h4> Blabs Located near you </h4>
       <% @locations.each do |location| %>
         <!-- <div class="link row clearfix"> -->
       <%= link_to location.address, location %><br>
+      
 
       <%end %>
     </div>

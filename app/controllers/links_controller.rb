@@ -11,6 +11,8 @@ class LinksController < ApplicationController
     # pulls all the locaton data from the databse to use in the links index page
     @locations = Location.all
     @users = current_user
+    @profile = Profile.all
+
   end
 
   # GET /links/1
