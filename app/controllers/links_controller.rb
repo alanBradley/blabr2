@@ -101,6 +101,6 @@ class LinksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     # added locations_attributes in link_params to add address from links form to the locations model
     def link_params
-      params.require(:link).permit(:title, :url, :image, locations_attributes: [:address, :_destroy])
+      params.require(:link).permit(:title, :url, :image, :blab, locations_attributes: [:address, :_destroy])
     end
 end

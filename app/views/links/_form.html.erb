@@ -22,17 +22,23 @@
   </div>
 
 <!-- form for adding address into locations model -->
-   <div class="form-group">
+  <div class="form-group">
     <%= f.fields_for :locations do |builder| %>
     <%= builder.label :address, "Address" %><br>
     <%= builder.text_field :address, class: "form-control" %>
     <% end %>
   </div> 
 
-    <div class="form-group">
+  <div class="form-group">
     <%= f.label :image %><br>
     <%= f.file_field :image, class: "form-control" %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :blab %><br>
+    <%= f.text_area :blab, class: "form-control" %>
+  </div>
+
   <br>
   <div class="form-group">
     <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>

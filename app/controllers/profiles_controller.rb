@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
+
   # GET /profiles
   # GET /profiles.json
   def index
@@ -12,6 +13,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     @links = Link.all
+
   end
 
   # GET /profiles/new

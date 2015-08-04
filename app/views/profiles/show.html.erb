@@ -31,18 +31,21 @@
         <strong>Email:</strong>
         <%= @profile.user.email %>
       </p>
+
+      <!-- authorisation showing edit and destroy buttons for user if they created the post -->
+      <% if @profile.user == current_user %>
       <div class="btn-group">
         <%= link_to 'Edit Profile', edit_profile_path(@profile), class: "btn btn-default" %>
       </div>
+      <% end %>
     </div>
 
 
 
     <div id="content" class="col-md-4 right-block">
         <h4> My latest blabs </h4>
-        <% @links.each do |link| %>
-          <!-- <div class="link row clearfix"> -->
-        <%= image_tag link.image.url(:thumb) %><br>
+        <% @profile.user.links.each do |link| %>
+          <%= image_tag link.image.url(:thumb) %><br>
         <div class="btn-group">
           <strong><%= link_to link.title, link, class: "btn btn-default" %></strong><br><br>
         </div>
