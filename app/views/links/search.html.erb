@@ -1,0 +1,12 @@
+<h1>Searched Blabs</h1>
+
+<div class="row">
+  <% @links.each do |link| %>
+    <div class="col-xs-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag link.image.url(:medium), class: 'image'), link %>
+        <small class="author"><%= link.title %> by <%= link_to link.user.name %> </small>
+      </div>
+    </div>
+  <% end %>
+</div>

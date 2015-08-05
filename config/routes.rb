@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   get '/signedinuserprofile' => 'profiles#signedinuserprofile'
   
   # block resource for links and up/down votes on the links
+  # also contains collection for searchkick functionality within links
   resources :links do
+    collection do
+      get 'search'
+    end
   	member do
   		put "like", to:    "links#upvote"
   		put "dislike", to: "links#downvote"

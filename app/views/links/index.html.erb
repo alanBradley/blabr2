@@ -32,7 +32,7 @@
       <h4> Blabs Located near you </h4>
       <% @locations.each do |location| %>
         <!-- <div class="link row clearfix"> -->
-      <%= link_to location.address, location %><br>
+      <%= location.link.title %> @ <%= link_to location.address, location %><br>
       
 
       <%end %>

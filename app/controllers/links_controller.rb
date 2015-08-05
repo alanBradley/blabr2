@@ -3,6 +3,16 @@ class LinksController < ApplicationController
   # authentication on all methods except index and show pages so non-users cannot just bypass links to edit / destroy content
   before_filter :authenticate_user!, except: [:index, :show]
 
+  def search
+    # if the search bar is left blank it will display all the links in the database
+    if params[:search].present?
+      @links = Link.search(params[:search])
+    else
+      @links = Link.all
+    end
+  end
+
+
   # GET /links
   # GET /links.json
   def index

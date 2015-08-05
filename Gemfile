@@ -27,6 +27,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'simple_form', '~> 3.1.0'
 gem 'paperclip', '~> 4.3.0'
 gem 'geocoder', '~> 1.2.9'
+gem 'searchkick', '~> 0.9.0'
 
 
 # Use ActiveModel has_secure_password

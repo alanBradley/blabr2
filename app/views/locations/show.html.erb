@@ -17,7 +17,7 @@
 
 <p>
   <strong>Blabr:</strong>
-  <%= link_to @location.link.title %>
+  <%= link_to @location.link.title, @location.link %>
 </p>
 
 <!-- image tag for the google static map API to include lats + longs to show where each place is on site. TO UPDATE TO GMAPS4RAILS AT LATER PHASE -->
@@ -32,5 +32,5 @@
 <% end %>
 </ul>
 
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<%= link_to 'Edit Location details', edit_location_path(@location), class: "btn btn-default" %>
+
